@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:StudentIO"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <SolidColorBrush x:Key="DarkBlue" Color="#0d4c89"/>
+        <SolidColorBrush x:Key="Grey" Color="#5e5e5e"/>
+        <SolidColorBrush x:Key="PaleWhite" Color="#efefef"/>
+        <SolidColorBrush x:Key="DarkGrey" Color="#333333"/>
+
     </Application.Resources>
 </Application>
