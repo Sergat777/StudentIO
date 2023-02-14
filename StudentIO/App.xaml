@@ -10,5 +10,65 @@
         <SolidColorBrush x:Key="PaleWhite" Color="#efefef"/>
         <SolidColorBrush x:Key="DarkGrey" Color="#333333"/>
 
+        <Style TargetType="TextBlock">
+
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontFamily" Value="Franklin Gothic Book"/>
+
+        </Style>
+
+        <Style TargetType="TextBox">
+
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkGrey}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Grey}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontFamily" Value="Franklin Gothic Book"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsFocused" Value="True">
+                    <Setter Property="BorderBrush" Value="{StaticResource DarkBlue}"/>
+                    <Setter Property="BorderThickness" Value="2"/>
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+
+        <Style TargetType="PasswordBox">
+
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkGrey}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Grey}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontFamily" Value="Franklin Gothic Book"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsFocused" Value="True">
+                    <Setter Property="BorderBrush" Value="{StaticResource DarkBlue}"/>
+                    <Setter Property="BorderThickness" Value="2"/>
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+
+        <Style TargetType="Button">
+
+            <Setter Property="BorderBrush" Value="{StaticResource DarkGrey}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Background" Value="{StaticResource DarkBlue}"/>
+            <Setter Property="Foreground" Value="{StaticResource PaleWhite}"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver"  Value="True">
+                    <Setter Property="Background" Value="{StaticResource PaleWhite}"/>
+                    <Setter Property="Foreground" Value="{StaticResource DarkGrey}"/>
+                </Trigger>
+            </Style.Triggers>
+            
+        </Style>
+
+        
     </Application.Resources>
 </Application>

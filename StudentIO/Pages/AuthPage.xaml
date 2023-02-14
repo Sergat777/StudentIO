@@ -1,0 +1,32 @@
+﻿<Page x:Class="StudentIO.Pages.AuthPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:StudentIO.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="СТУДЕНТ ИО">
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Text="Введите ваш логин и пароль" HorizontalAlignment="Center"/>
+        <DockPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" DockPanel.Dock="Bottom">
+                <Button x:Name="btClear" Content="Очистить" Padding="5" Click="btClear_Click"/>
+                <Button x:Name="btEnter" Content="Войти" Padding="5" Click="btEnter_Click"/>
+            </StackPanel>
+
+            <StackPanel DockPanel.Dock="Left">
+                <TextBlock Text="Логин" Margin="10"/>
+                <TextBlock Text="Пароль" Margin="10"/>
+            </StackPanel>
+
+            <StackPanel DockPanel.Dock="Right">
+                <TextBox x:Name="tbLogin" Margin="10" Width="300" MaxLength="20"/>
+                <PasswordBox x:Name="pswPassword" Margin="10" Width="300" MaxLength="20"/>
+            </StackPanel>
+
+        </DockPanel>
+    </StackPanel>
+</Page>

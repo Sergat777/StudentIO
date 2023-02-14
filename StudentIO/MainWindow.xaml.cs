@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +24,20 @@ namespace StudentIO
         public MainWindow()
         {
             InitializeComponent();
+
+            mainFrame.Navigate(new Pages.AuthPage());
+        }
+
+        private void btExit_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Вы уверены, что хотите выйти из текущей учетной записи?", "Внимание",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                mainFrame.Navigate(new Pages.AuthPage());
+        }
+
+        private void btInfo_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
