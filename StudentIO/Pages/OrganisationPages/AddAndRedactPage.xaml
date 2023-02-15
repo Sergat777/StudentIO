@@ -35,11 +35,11 @@
         <TextBlock Text="Логин" Grid.Column="1" Grid.Row="4" Margin="10"/>
         <TextBlock Text="Пароль" Grid.Column="1" Grid.Row="5" Margin="10"/>
 
-        <TextBox x:Name="tbxSecondNameEmployee" Grid.Column="2" Grid.Row="1" Margin="10"/>
-        <TextBox x:Name="tbxFirstNameEmployee" Grid.Column="2" Grid.Row="2" Margin="10"/>
-        <TextBox x:Name="tbxMiddleNameEmployee" Grid.Column="2" Grid.Row="3" Margin="10"/>
-        <TextBox x:Name="tbxEmployeeLogin" Grid.Column="2" Grid.Row="4" Margin="10"/>
-        <TextBox x:Name="tbxEmployeePassword" Grid.Column="2" Grid.Row="5" Margin="10"/>
+        <TextBox x:Name="tbSecondNameEmployee" Grid.Column="2" Grid.Row="1" Margin="10"/>
+        <TextBox x:Name="tbFirstNameEmployee" Grid.Column="2" Grid.Row="2" Margin="10"/>
+        <TextBox x:Name="tbMiddleNameEmployee" Grid.Column="2" Grid.Row="3" Margin="10"/>
+        <TextBox x:Name="tbLoginEmployee" Grid.Column="2" Grid.Row="4" Margin="10"/>
+        <TextBox x:Name="tbPasswordEmployee" Grid.Column="2" Grid.Row="5" Margin="10"/>
 
         <DockPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6" Margin="5">
             <Button x:Name="btGoBack" DockPanel.Dock="Left" Click="btGoBack_Click">
