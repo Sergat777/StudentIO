@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentIO"
         mc:Ignorable="d"
-        Title="Студент ИО" Height="650" Width="1300" MinHeight="650" MinWidth="1300"
+        Title="Студент ИО" Height="650" Width="1500" MinHeight="650" MinWidth="1500"
         Icon="/Resources/AdmissionIcon.ico" Background="{StaticResource PaleWhite}"
         WindowStartupLocation="CenterScreen">
     <DockPanel>

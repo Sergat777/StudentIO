@@ -69,6 +69,24 @@
             
         </Style>
 
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="BorderBrush" Value="{StaticResource Grey}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="{StaticResource PaleWhite}"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkGrey}"/>
+            <Setter Property="Padding" Value="5"/>
+
+            <Style.Triggers>
+                <Trigger Property="SortDirection"  Value="Ascending">
+                    <Setter Property="Background" Value="{StaticResource DarkBlue}"/>
+                    <Setter Property="Foreground" Value="{StaticResource PaleWhite}"/>
+                </Trigger>
+                <Trigger Property="SortDirection"  Value="Descending">
+                    <Setter Property="Background" Value="{StaticResource DarkBlue}"/>
+                    <Setter Property="Foreground" Value="{StaticResource PaleWhite}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
         
     </Application.Resources>
 </Application>

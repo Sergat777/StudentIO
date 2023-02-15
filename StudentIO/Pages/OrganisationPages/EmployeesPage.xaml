@@ -10,11 +10,17 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <DataGrid Grid.Row="0" AutoGenerateColumns="False" ColumnWidth="*" x:Name="dgEmployees">
+        <DockPanel Grid.Row="0">
+            <Image Height="20" DockPanel.Dock="Left" Source="/Resources/search.png" Margin="5"/>
+            <TextBox x:Name="tbSearch" ToolTip="Введите для поиска" Margin="5" VerticalAlignment="Center" TextChanged="tbSearch_TextChanged"/>
+        </DockPanel>
+
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" ColumnWidth="*" x:Name="dgEmployees" IsReadOnly="True" CanUserResizeRows="False">
             <DataGrid.Columns >
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding SecondNameEmployee}"/>
                 <DataGridTextColumn Header="Имя" Binding="{Binding FirstNameEmployee}"/>
@@ -24,7 +30,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Border Grid.Row="1" BorderBrush="{StaticResource Grey}" BorderThickness="3">
+        <Border Grid.Row="2" BorderBrush="{StaticResource Grey}" BorderThickness="3">
             <Grid>
                 
                 <Grid.ColumnDefinitions>
@@ -33,9 +39,9 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 
-                <Button x:Name="btRedact" Content="Редактировать" Grid.Column="0" Click="btRedact_Click"/>
-                <Button x:Name="btAdd" Content="Добавить" Grid.Column="1" Click="btAdd_Click"/>
-                <Button x:Name="btDelete" Content="Удалить" Grid.Column="2" Click="btDelete_Click"/>
+                <Button x:Name="btDelete" Content="Удалить" Grid.Column="0" Click="btDelete_Click"/>
+                <Button x:Name="btRedact" Content="Редактировать" Grid.Column="1" Click="btRedact_Click"/>
+                <Button x:Name="btAdd" Content="Добавить" Grid.Column="2" Click="btAdd_Click"/>
                 
             </Grid>
         </Border>

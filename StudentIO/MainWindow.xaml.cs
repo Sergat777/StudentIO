@@ -29,7 +29,7 @@ namespace StudentIO
 
             //mainFrame.Navigate(new Pages.AuthPage());
 
-            mainFrame.Navigate(new Pages.MainPage());
+            mainFrame.Navigate(new Pages.MainPage(null));
 
         }
 
@@ -37,7 +37,12 @@ namespace StudentIO
         {
             if (MessageBox.Show("Вы уверены, что хотите выйти из текущей учетной записи?", "Внимание",
                 MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
                 mainFrame.Navigate(new Pages.AuthPage());
+                txtEmployeeSecondName.Text = "";
+                txtEmployeeFirstName.Text = "";
+                txtEmployeeMiddleName.Text = "";
+            }
         }
 
         private void btInfo_Click(object sender, RoutedEventArgs e)

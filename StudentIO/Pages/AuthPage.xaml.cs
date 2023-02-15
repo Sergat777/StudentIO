@@ -34,20 +34,23 @@ namespace StudentIO.Pages
         private void btEnter_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(tbLogin.Text) || string.IsNullOrEmpty(pswPassword.Password))
-                MessageBox.Show("Заполните поля логина и пароля", "Внимание", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Заполните поля логина и пароля!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
-                Classes.Navigation.FrameNavigation.Navigate(new Pages.MainPage());
-                //Entities.User user = Entities.VahicleDBEntities.GetContext().User.FirstOrDefault(u =>
-                //    u.loginUser == tbLogin.Text && u.passwordUser == pswPassword.Password);
+                DataBase.Employee employee = DataBase.StudentIOEntities.GetContext().Employee.FirstOrDefault(u =>
+                    u.Login == tbLogin.Text && u.Password == pswPassword.Password);
 
-                //if (user == null)
-                //    MessageBox.Show("Пользователь с введенными данными не обнаружен", "Внимание", MessageBoxButton.OK, MessageBoxImage.Error);
-                //else
-                //{
-                //    MessageBox.Show($"Добро пожаловать, {user.lastName} {user.firstName} {user.middleName}!", "Уведомление",
-                //        MessageBoxButton.OK, MessageBoxImage.Information);
-                //}
+                if (employee == null)
+                    MessageBox.Show("Пользователь с введенными данными не обнаружен.", "Внимание", MessageBoxButton.OK, MessageBoxImage.Error);
+                else
+                {
+                    MessageBox.Show($"Добро пожаловать, {employee.SecondNameEmployee} {employee.FirstNameEmployee} {employee.MiddleNameEmloyee}!",
+                        "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Classes.Navigation.FrameNavigation.Navigate(new Pages.MainPage(employee));
+                    Classes.Navigation.TxtSecondName.Text = employee.SecondNameEmployee;
+                    Classes.Navigation.TxtFirstName.Text = employee.FirstNameEmployee;
+                    Classes.Navigation.TxtMiddleName.Text = employee.MiddleNameEmloyee;
+                }
             }
         }
     }

@@ -10,8 +10,8 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
-            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -30,6 +30,8 @@
             <Button x:Name="btEmployees" Content="Сотрудники" Grid.Column="4" Click="btEmployees_Click"/>
             
         </Grid>
+        
         <Frame x:Name="OrganisationFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Margin="5"/>
+        
     </Grid>
 </Page>
