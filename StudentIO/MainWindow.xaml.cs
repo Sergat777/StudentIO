@@ -31,8 +31,6 @@ namespace StudentIO
 
             mainFrame.Navigate(new Pages.MainPage());
 
-
-
         }
 
         private void btExit_Click(object sender, RoutedEventArgs e)

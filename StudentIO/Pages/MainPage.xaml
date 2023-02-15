@@ -15,17 +15,15 @@
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
 
-        <Border BorderBrush="{StaticResource Grey}" BorderThickness="5">
-            <ScrollViewer>
-                <StackPanel>
+        <Border BorderBrush="{StaticResource Grey}" BorderThickness="3">
+            <StackPanel>
 
-                    <Button x:Name="btSelectionCampaign" Content="Приемные кампании" Click="btSelectionCampaign_Click"/>
-                    <Button x:Name="btEnrollee" Content="Абитуриенты" Click="btEnrollee_Click"/>
-                    <Button x:Name="btEntranceTest" Content="Вступительные испытания" Click="btEntranceTest_Click"/>
-                    <Button x:Name="btOrganization" Content="Организация" Click="btOrganization_Click"/>
+                <Button x:Name="btEnrollee" Content="Абитуриенты" Click="btEnrollee_Click"/>
+                <Button x:Name="btSelectionCampaign" Content="Приемные кампании" Click="btSelectionCampaign_Click"/>
+                <Button x:Name="btEntranceTest" Content="Вступительные испытания" Click="btEntranceTest_Click"/>
+                <Button x:Name="btOrganization" Content="Организация" Click="btOrganization_Click"/>
 
-                </StackPanel>
-            </ScrollViewer>
+            </StackPanel>
         </Border>
 
         <Frame x:Name="mainPageFrame" NavigationUIVisibility="Hidden" Grid.Column="1" Margin="5"/>
