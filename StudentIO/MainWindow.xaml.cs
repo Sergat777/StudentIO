@@ -25,6 +25,8 @@ namespace StudentIO
         {
             InitializeComponent();
 
+            Classes.Navigation.FrameNavigation = mainFrame;
+
             mainFrame.Navigate(new Pages.AuthPage());
         }
 

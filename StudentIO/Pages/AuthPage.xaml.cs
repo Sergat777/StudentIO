@@ -37,7 +37,7 @@ namespace StudentIO.Pages
                 MessageBox.Show("Заполните поля логина и пароля", "Внимание", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
-
+                Classes.Navigation.FrameNavigation.Navigate(new Pages.MainPage());
                 //Entities.User user = Entities.VahicleDBEntities.GetContext().User.FirstOrDefault(u =>
                 //    u.loginUser == tbLogin.Text && u.passwordUser == pswPassword.Password);
 
