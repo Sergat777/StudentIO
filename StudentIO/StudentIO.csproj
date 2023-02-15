@@ -81,6 +81,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\OrganisationPages\AddAndRedactPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OrganisationPages\EmployeesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\AuthPage.xaml.cs">
@@ -91,6 +99,12 @@
     </Compile>
     <Compile Include="Pages\OrganisationPage.xaml.cs">
       <DependentUpon>OrganisationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrganisationPages\AddAndRedactPage.xaml.cs">
+      <DependentUpon>AddAndRedactPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrganisationPages\EmployeesPage.xaml.cs">
+      <DependentUpon>EmployeesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

@@ -23,6 +23,32 @@ namespace StudentIO.Pages
         public OrganisationPage()
         {
             InitializeComponent();
+            OrganisationFrame = Classes.Navigation.FrameNavigation;
+        }
+
+        private void btPersonalFiles_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btGroups_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btSpecialties_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btOrders_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btEmployees_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.Navigation.FrameNavigation.Navigate(new Pages.OrganisationPages.EmployeesPage());
         }
     }
 }

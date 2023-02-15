@@ -15,7 +15,7 @@
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
 
-        <Border BorderBrush="{StaticResource Grey}" BorderThickness="5">
+        <Border BorderBrush="{StaticResource Grey}" BorderThickness="3">
             <ScrollViewer>
                 <StackPanel>
 
