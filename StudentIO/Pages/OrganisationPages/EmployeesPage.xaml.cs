@@ -20,9 +20,12 @@ namespace StudentIO.Pages.OrganisationPages
     /// </summary>
     public partial class EmployeesPage : Page
     {
-        public EmployeesPage()
+        public Frame ParentFrame;
+
+        public EmployeesPage(Frame parentFrame)
         {
             InitializeComponent();
+            ParentFrame = parentFrame;
             //dgEmployees.ItemsSource = DataBase.StudentIOEntities.GetContext().Employee.ToList();
         }
 
@@ -30,17 +33,18 @@ namespace StudentIO.Pages.OrganisationPages
         {
             if (dgEmployees.SelectedItem == null)
             {
-                MessageBox.Show("Не выбрана запись для удаления!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Не выбрана запись для редактирования!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else if (MessageBox.Show("Вы уверены что хотите изменить учетную запись выбранного сотрудника?", "Внимание",
                 MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
+                ParentFrame.Navigate(new AddAndRedactPage(dgEmployees.SelectedItem as DataBase.Employee));
             }
         }
 
         private void btAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            ParentFrame.Navigate(new AddAndRedactPage(null));
         }
 
         private void btDelete_Click(object sender, RoutedEventArgs e)
@@ -49,7 +53,10 @@ namespace StudentIO.Pages.OrganisationPages
             {
                 MessageBox.Show("Не выбрана запись для удаления!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            else if (MessageBox.Show("Вы уверены что хотите удалить учетную запись выбранного сотрудника?", "Внимание",
+            else if (Classes.Navigation.CurrentEmployee == dgEmployees.SelectedItem as DataBase.Employee)
+                MessageBox.Show("Невозможно выполнить удаление сотрудника, выполнившего вход в систему!", "Внимание",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+            else if(MessageBox.Show("Вы уверены что хотите удалить учетную запись выбранного сотрудника?", "Внимание",
                 MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 DataBase.Employee deletedEmployee = dgEmployees.SelectedItem as DataBase.Employee;

@@ -23,7 +23,7 @@ namespace StudentIO.Pages
         public OrganisationPage()
         {
             InitializeComponent();
-            //OrganisationFrame = Classes.Navigation.FrameNavigation;
+            //OrganisationFrame = Classes.Navigation.FrameNavigation;           не надо менять майне фрейме как перчатки, он майне, не забывай, не курент
         }
 
         private void btPersonalFiles_Click(object sender, RoutedEventArgs e)
@@ -48,7 +48,7 @@ namespace StudentIO.Pages
 
         private void btEmployees_Click(object sender, RoutedEventArgs e)
         {
-            OrganisationFrame.Navigate(new Pages.OrganisationPages.EmployeesPage());
+            OrganisationFrame.Navigate(new Pages.OrganisationPages.EmployeesPage(OrganisationFrame));
         }
     }
 }

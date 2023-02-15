@@ -29,7 +29,7 @@ namespace StudentIO
 
             //mainFrame.Navigate(new Pages.AuthPage());
 
-            mainFrame.Navigate(new Pages.MainPage(null));
+            mainFrame.Navigate(new Pages.MainPage());
 
         }
 

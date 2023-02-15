@@ -20,12 +20,9 @@ namespace StudentIO.Pages
     /// </summary>
     public partial class MainPage : Page
     {
-        public DataBase.Employee CurrentEmployee;
-
-        public MainPage(DataBase.Employee employee)
+        public MainPage()
         {
             InitializeComponent();
-            CurrentEmployee = employee;
         }
 
         private void btEnrollee_Click(object sender, RoutedEventArgs e)

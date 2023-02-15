@@ -14,5 +14,7 @@ namespace StudentIO.Classes
         public static TextBlock TxtSecondName { get; set; }
         public static TextBlock TxtFirstName { get; set; }
         public static TextBlock TxtMiddleName { get; set; }
+
+        public static DataBase.Employee CurrentEmployee { get; set; }
     }
 }

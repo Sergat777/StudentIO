@@ -228,6 +228,7 @@
       <DependentUpon>StudentIO.edmx</DependentUpon>
       <LastGenOutput>StudentIO.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\arrow.png" />
     <Resource Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>

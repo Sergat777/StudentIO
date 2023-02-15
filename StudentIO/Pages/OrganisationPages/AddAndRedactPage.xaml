@@ -8,35 +8,47 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="{Binding Content.Title, ElementName=OrganisationFrame, FallbackValue='ИНФОРМАЦИЯ О СОТРУДНИКЕ'}">
 
-    <Grid>
+    <Grid VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="24" Text="Фамилия" Grid.Column="0" Grid.Row="0" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock FontSize="24" Text="Имя" Grid.Column="0" Grid.Row="1" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock FontSize="24" Text="Отчество" Grid.Column="0" Grid.Row="2" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock FontSize="24" Text="Логин" Grid.Column="0" Grid.Row="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock FontSize="24" Text="Пароль" Grid.Column="0" Grid.Row="4" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Введите данные новой учетной записи сотрудника организации:" Grid.Column="1" Grid.ColumnSpan="2" Margin="10"
+                   TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock Text="Фамилия" Grid.Column="1" Grid.Row="1" Margin="10"/>
+        <TextBlock Text="Имя" Grid.Column="1" Grid.Row="2" Margin="10"/>
+        <TextBlock Text="Отчество" Grid.Column="1" Grid.Row="3" Margin="10"/>
+        <TextBlock Text="Логин" Grid.Column="1" Grid.Row="4" Margin="10"/>
+        <TextBlock Text="Пароль" Grid.Column="1" Grid.Row="5" Margin="10"/>
 
-        <TextBox x:Name="tbxSecondNameEmployee" FontSize="24" Grid.Column="1" Grid.Row="0" Margin="10"/>
-        <TextBox x:Name="tbxFirstNameEmployee" FontSize="24" Grid.Column="1" Grid.Row="1" Margin="10"/>
-        <TextBox x:Name="tbxMiddleNameEmployee" FontSize="24" Grid.Column="1" Grid.Row="2" Margin="10"/>
-        <TextBox x:Name="tbxEmployeeLogin" FontSize="24" Grid.Column="1" Grid.Row="3" Margin="10"/>
-        <TextBox x:Name="tbxEmployeePassword" FontSize="24" Grid.Column="1" Grid.Row="4" Margin="10"/>
+        <TextBox x:Name="tbxSecondNameEmployee" Grid.Column="2" Grid.Row="1" Margin="10"/>
+        <TextBox x:Name="tbxFirstNameEmployee" Grid.Column="2" Grid.Row="2" Margin="10"/>
+        <TextBox x:Name="tbxMiddleNameEmployee" Grid.Column="2" Grid.Row="3" Margin="10"/>
+        <TextBox x:Name="tbxEmployeeLogin" Grid.Column="2" Grid.Row="4" Margin="10"/>
+        <TextBox x:Name="tbxEmployeePassword" Grid.Column="2" Grid.Row="5" Margin="10"/>
 
-        <Button x:Name="btGoBack" Content="Назад" Grid.Column="0" Grid.Row="5" Margin="5"/>
-        <Button x:Name="btConfirm" Content="Подтвердить" Grid.Column="1" Grid.Row="5" Margin="5"/>
+        <DockPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6" Margin="5">
+            <Button x:Name="btGoBack" DockPanel.Dock="Left" Click="btGoBack_Click">
+                <Button.Content>
+                    <Image Source="/Resources/arrow.png" Height="20"/>
+                </Button.Content>
+            </Button>
+            <Button x:Name="btConfirm" Content="Сохранить"  Click="btConfirm_Click"/>
+        </DockPanel>
 
     </Grid>
 </Page>

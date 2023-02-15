@@ -20,9 +20,29 @@ namespace StudentIO.Pages.OrganisationPages
     /// </summary>
     public partial class AddAndRedactPage : Page
     {
-        public AddAndRedactPage()
+        public DataBase.Employee AddRedactEmployee = new DataBase.Employee();
+
+        public AddAndRedactPage(DataBase.Employee redactedEmployee)
         {
             InitializeComponent();
+
+            if (redactedEmployee == null)
+                Title = "ДОБАВЛЕНИЕ СОТРУДНИКА";
+            else
+            {
+                Title = "РЕДАКТИРОВАНИЕ СОТРУДНИКА";
+                AddRedactEmployee = redactedEmployee;
+            }
+        }
+
+        private void btGoBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void btConfirm_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

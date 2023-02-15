@@ -46,7 +46,8 @@ namespace StudentIO.Pages
                 {
                     MessageBox.Show($"Добро пожаловать, {employee.SecondNameEmployee} {employee.FirstNameEmployee} {employee.MiddleNameEmloyee}!",
                         "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-                    Classes.Navigation.FrameNavigation.Navigate(new Pages.MainPage(employee));
+                    Classes.Navigation.CurrentEmployee = employee;
+                    Classes.Navigation.FrameNavigation.Navigate(new Pages.MainPage());
                     Classes.Navigation.TxtSecondName.Text = employee.SecondNameEmployee;
                     Classes.Navigation.TxtFirstName.Text = employee.FirstNameEmployee;
                     Classes.Navigation.TxtMiddleName.Text = employee.MiddleNameEmloyee;
