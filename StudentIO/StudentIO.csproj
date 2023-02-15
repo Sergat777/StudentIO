@@ -35,9 +35,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -65,6 +74,75 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classes\Navigation.cs" />
+    <Compile Include="DataBase\AdmissionControlNumber.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Employee.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Enrollee.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\EnrolleeDocument.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\EnrolleeEntranceTest.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\EntranceTest.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\FormOfEducation.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Group.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Nationality.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\OrderOfAdmission.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\PersonalStudentFile.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\SelectionCampaign.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Speciality.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\StartEducation.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Statement.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\StudentIO.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentIO.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\StudentIO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\StudentIO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentIO.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Subject.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\SubjectOfEntranceTest.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\sysdiagrams.cs">
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -81,6 +159,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\OrganisationPages\AddAndRedactPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OrganisationPages\EmployeesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\AuthPage.xaml.cs">
@@ -91,6 +177,12 @@
     </Compile>
     <Compile Include="Pages\OrganisationPage.xaml.cs">
       <DependentUpon>OrganisationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrganisationPages\AddAndRedactPage.xaml.cs">
+      <DependentUpon>AddAndRedactPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrganisationPages\EmployeesPage.xaml.cs">
+      <DependentUpon>EmployeesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -109,6 +201,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="DataBase\StudentIO.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StudentIO.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataBase\StudentIO.edmx.diagram">
+      <DependentUpon>StudentIO.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,12 +217,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DataBase\StudentIO.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StudentIO.Context.cs</LastGenOutput>
+      <DependentUpon>StudentIO.edmx</DependentUpon>
+    </Content>
+    <Content Include="DataBase\StudentIO.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudentIO.edmx</DependentUpon>
+      <LastGenOutput>StudentIO.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\AdmissionIcon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\AdmissionIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
