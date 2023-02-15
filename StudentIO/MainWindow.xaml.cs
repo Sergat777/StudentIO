@@ -27,7 +27,12 @@ namespace StudentIO
 
             Classes.Navigation.FrameNavigation = mainFrame;
 
-            mainFrame.Navigate(new Pages.AuthPage());
+            //mainFrame.Navigate(new Pages.AuthPage());
+
+            mainFrame.Navigate(new Pages.MainPage());
+
+
+
         }
 
         private void btExit_Click(object sender, RoutedEventArgs e)

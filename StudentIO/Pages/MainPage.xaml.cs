@@ -24,5 +24,25 @@ namespace StudentIO.Pages
         {
             InitializeComponent();
         }
+
+        private void btEnrollee_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btSelectionCampaign_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btEntranceTest_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btOrganization_Click(object sender, RoutedEventArgs e)
+        {
+            mainPageFrame.Navigate(new OrganisationPage());
+        }
     }
 }

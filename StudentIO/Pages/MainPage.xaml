@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:StudentIO.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="СТУДЕНТ ИО">
+      Title="{Binding Content.Title, ElementName=mainPageFrame, FallbackValue='СТУДЕНТ ИО'}">
 
     <Grid>
 
@@ -19,16 +19,16 @@
             <ScrollViewer>
                 <StackPanel>
 
-                    <Button x:Name="btSelectionCampaign" Content="Приемные кампании" Click="btRouteList_Click"/>
-                    <Button x:Name="btEnrollee" Content="Абитуриенты" Click="btRouteHistoryList_Click"/>
-                    <Button x:Name="btEntranceTest" Content="Вступительные испытания" Click="btDriverList_Click"/>
-                    <Button x:Name="btOrganization" Content="Организация" Click="btAutoList_Click"/>
+                    <Button x:Name="btSelectionCampaign" Content="Приемные кампании" Click="btSelectionCampaign_Click"/>
+                    <Button x:Name="btEnrollee" Content="Абитуриенты" Click="btEnrollee_Click"/>
+                    <Button x:Name="btEntranceTest" Content="Вступительные испытания" Click="btEntranceTest_Click"/>
+                    <Button x:Name="btOrganization" Content="Организация" Click="btOrganization_Click"/>
 
                 </StackPanel>
             </ScrollViewer>
         </Border>
 
-        <Frame x:Name="adminFrame" NavigationUIVisibility="Hidden" Grid.Column="1" Margin="5"/>
+        <Frame x:Name="mainPageFrame" NavigationUIVisibility="Hidden" Grid.Column="1" Margin="5"/>
 
     </Grid>
     
