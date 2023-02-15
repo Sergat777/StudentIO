@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fd88f3dff6cf4d5b91ff2e2cf86ded46" Name="Diagram1">
+        <EntityTypeShape EntityType="StudentIOModel.AdmissionControlNumber" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.Employee" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.Enrollee" Width="1.5" PointX="10.5" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.EnrolleeDocument" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.EnrolleeEntranceTest" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.EntranceTest" Width="1.5" PointX="8.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.FormOfEducation" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.Group" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.Nationality" Width="1.5" PointX="8.25" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.OrderOfAdmission" Width="1.5" PointX="5.25" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.PersonalStudentFile" Width="1.5" PointX="7.5" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.SelectionCampaign" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.Speciality" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.StartEducation" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.Statement" Width="1.5" PointX="8.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.Subject" Width="1.5" PointX="10.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.SubjectOfEntranceTest" Width="1.5" PointX="10.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="StudentIOModel.FK_AdmissionControlNumber_FormOfEducation" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_AdmissionControlNumber_SelectionCampaign" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_AdmissionControlNumber_Speciality" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_SelectionCampaign_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_Enrollee_EnrolleeDocument" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_Enrollee_Nationality" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_Enrollee_Statement" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_EnrolleeEntranceTest_Enrollee" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_PersonalStudentFile_Enrollee" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_EnrolleeEntranceTest_Subject" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_EntranceTest_SelectionCampaign" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_EntranceTest_Speciality1" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_SubjectOfEntranceTest_EntranceTest" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_Speciality_FormOfEducation" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_Group_Speciality" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_PersonalStudentFile_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_OrderOfAdmission_SelectionCampaign" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_PersonalStudentFile_OrderOfAdmission" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_Statement_SelectionCampaign" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_Statement_Speciality" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_Statement_StartEducation" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentIOModel.FK_SubjectOfEntranceTest_Subject" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -14,16 +14,19 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <DataGrid Grid.Row="0">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Фамилия"/>
-                <DataGridTextColumn Header="Имя"/>
-                <DataGridTextColumn Header="Отчество"/>
+        <DataGrid Grid.Row="0" AutoGenerateColumns="False" ColumnWidth="*" x:Name="dgEmployees">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding SecondNameEmployee}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding FirstNameEmployee}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding MiddleNameEmloyee}"/>
+                <DataGridTextColumn Header="Логин" Binding="{Binding Login}"/>
+                <DataGridTextColumn Header="Пароль" Binding="{Binding Password}"/>
             </DataGrid.Columns>
         </DataGrid>
 
         <Border Grid.Row="1" BorderBrush="{StaticResource Grey}" BorderThickness="3">
             <Grid>
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>

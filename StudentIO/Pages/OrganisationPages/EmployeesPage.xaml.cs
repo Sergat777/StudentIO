@@ -23,6 +23,7 @@ namespace StudentIO.Pages.OrganisationPages
         public EmployeesPage()
         {
             InitializeComponent();
+            dgEmployees.ItemsSource = DataBase.StudentIOEntities.GetContext().Employee.ToList();
         }
 
         private void btRedact_Click(object sender, RoutedEventArgs e)
@@ -37,7 +38,19 @@ namespace StudentIO.Pages.OrganisationPages
 
         private void btDelete_Click(object sender, RoutedEventArgs e)
         {
+            if (dgEmployees.SelectedItem == null)
+            {
+                MessageBox.Show("Не выбрана запись для удаления!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (MessageBox.Show("Вы уверены что хотите удалить эту запись?", "Внимание!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                DataBase.Employee deletedEmployee = dgEmployees.SelectedItem as DataBase.Employee;
+                DataBase.StudentIOEntities.GetContext().Employee.Remove(deletedEmployee);
+                DataBase.StudentIOEntities.GetContext().SaveChanges();
 
+                MessageBox.Show("Удаление записи прошло успешно!", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Information);
+                dgEmployees.ItemsSource = DataBase.StudentIOEntities.GetContext().Employee.ToList();
+            }
         }
     }
 }
