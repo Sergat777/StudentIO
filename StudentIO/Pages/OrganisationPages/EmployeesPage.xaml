@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:StudentIO.Pages.OrganisationPages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="{Binding Content.Title, ElementName=OrganisationFrame, FallbackValue='СОТРУДНИКИ'}">
+      Title="СОТРУДНИКИ">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -24,7 +24,7 @@
             <DataGrid.Columns >
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding SecondNameEmployee}"/>
                 <DataGridTextColumn Header="Имя" Binding="{Binding FirstNameEmployee}"/>
-                <DataGridTextColumn Header="Отчество" Binding="{Binding MiddleNameEmloyee}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding MiddleNameEmployee}"/>
                 <DataGridTextColumn Header="Логин" Binding="{Binding Login}"/>
                 <DataGridTextColumn Header="Пароль" Binding="{Binding Password}"/>
             </DataGrid.Columns>

@@ -38,7 +38,7 @@ namespace StudentIO.Pages
 
         private void btSpecialties_Click(object sender, RoutedEventArgs e)
         {
-
+            OrganisationFrame.Navigate(new Pages.OrganisationPages.SpecialitiesPage(OrganisationFrame));
         }
 
         private void btOrders_Click(object sender, RoutedEventArgs e)
