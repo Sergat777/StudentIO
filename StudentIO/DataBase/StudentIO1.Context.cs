@@ -19,6 +19,16 @@ namespace StudentIO.DataBase
             : base("name=StudentIOEntities1")
         {
         }
+
+        private static StudentIOEntities1 _context;
+
+        public static StudentIOEntities1 GetContext()
+        {
+            if (_context == null)
+                _context = new StudentIOEntities1();
+
+            return _context;
+        }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

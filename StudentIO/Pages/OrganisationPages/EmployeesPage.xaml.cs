@@ -73,7 +73,7 @@ namespace StudentIO.Pages.OrganisationPages
             dgEmployees.ItemsSource = DataBase.StudentIOEntities.GetContext().Employee.
                 Where(u => u.SecondNameEmployee.Contains(tbSearch.Text) ||
                            u.FirstNameEmployee.Contains(tbSearch.Text) ||
-                           u.MiddleNameEmloyee.Contains(tbSearch.Text) ||
+                           u.MiddleNameEmployee.Contains(tbSearch.Text) ||
                            u.Login.Contains(tbSearch.Text) ||
                            u.Password.Contains(tbSearch.Text)).ToList();
         }

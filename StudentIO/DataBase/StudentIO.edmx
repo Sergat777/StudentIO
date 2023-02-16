@@ -592,7 +592,7 @@
           <Property Name="IdEmployee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstNameEmployee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SecondNameEmployee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MiddleNameEmloyee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleNameEmployee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="SelectionCampaign" Relationship="Self.FK_SelectionCampaign_Employee" FromRole="Employee" ToRole="SelectionCampaign" />
@@ -1199,7 +1199,7 @@
                 <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
                 <ScalarProperty Name="FirstNameEmployee" ColumnName="FirstNameEmployee" />
                 <ScalarProperty Name="SecondNameEmployee" ColumnName="SecondNameEmployee" />
-                <ScalarProperty Name="MiddleNameEmloyee" ColumnName="MiddleNameEmloyee" />
+                <ScalarProperty Name="MiddleNameEmployee" ColumnName="MiddleNameEmloyee" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>

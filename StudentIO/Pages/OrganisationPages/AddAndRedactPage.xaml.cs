@@ -26,12 +26,14 @@ namespace StudentIO.Pages.OrganisationPages
         {
             InitializeComponent();
 
-            if (redactedEmployee == null)
-                Title = "ДОБАВЛЕНИЕ СОТРУДНИКА";
-            else
+            if (redactedEmployee != null)
             {
-                Title = "РЕДАКТИРОВАНИЕ СОТРУДНИКА";
                 AddRedactEmployee = redactedEmployee;
+                tbSecondNameEmployee.Text = redactedEmployee.SecondNameEmployee;
+                tbFirstNameEmployee.Text = redactedEmployee.FirstNameEmployee;
+                tbMiddleNameEmployee.Text = redactedEmployee.MiddleNameEmployee;
+                tbLoginEmployee.Text = redactedEmployee.Login;
+                tbPasswordEmployee.Text = redactedEmployee.Password;
             }
         }
 
@@ -51,14 +53,14 @@ namespace StudentIO.Pages.OrganisationPages
                     !tbFirstNameEmployee.Text.Any(Char.IsDigit) &&
                     !tbMiddleNameEmployee.Text.Any(Char.IsDigit))
                 {
-                    if (MessageBox.Show("Вы уверены что хотите сохранить информацию об учетной записи сотрудника?", "Внимание",
+                    if (MessageBox.Show("Вы уверены, что хотите сохранить информацию об учетной записи сотрудника?", "Внимание",
                         MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                     {
                         AddRedactEmployee.SecondNameEmployee = tbSecondNameEmployee.Text.Trim();
                         AddRedactEmployee.FirstNameEmployee = tbFirstNameEmployee.Text.Trim();
 
                         if (!string.IsNullOrWhiteSpace(tbMiddleNameEmployee.Text))
-                            AddRedactEmployee.MiddleNameEmloyee = tbMiddleNameEmployee.Text.Trim();
+                            AddRedactEmployee.MiddleNameEmployee = tbMiddleNameEmployee.Text.Trim();
 
                         AddRedactEmployee.Login = tbLoginEmployee.Text;
                         AddRedactEmployee.Password = tbPasswordEmployee.Text;
