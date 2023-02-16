@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace StudentIO.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для SelectionCampain.xaml
+    /// Interaction logic for EntranceTestPage.xaml
     /// </summary>
-    public partial class SelectionCampain : Page
+    public partial class EntranceTestPage : Page
     {
-        public SelectionCampain()
+        public EntranceTestPage()
         {
             InitializeComponent();
-        }
-
-        private void btOrders_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

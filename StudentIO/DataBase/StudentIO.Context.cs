@@ -31,6 +31,7 @@ namespace StudentIO.DataBase
         }
 
 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

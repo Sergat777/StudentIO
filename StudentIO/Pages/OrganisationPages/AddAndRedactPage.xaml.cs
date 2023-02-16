@@ -66,12 +66,14 @@ namespace StudentIO.Pages.OrganisationPages
                         AddRedactEmployee.Password = tbPasswordEmployee.Text;
 
                         if (AddRedactEmployee.IdEmployee == 0)
-                            DataBase.StudentIOEntities.GetContext().Employee.Add(AddRedactEmployee);
+                            DataBase.StudentIOEntities1.GetContext().Employee.Add(AddRedactEmployee);
 
-                        DataBase.StudentIOEntities.GetContext().SaveChanges();
+                        DataBase.StudentIOEntities1.GetContext().SaveChanges();
 
                         MessageBox.Show("Информация успешно сохранена!", "Информация",
                             MessageBoxButton.OK, MessageBoxImage.Information);
+
+                        NavigationService.GoBack();
                     }
                 }
                 else

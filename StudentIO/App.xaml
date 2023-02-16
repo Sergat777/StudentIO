@@ -69,6 +69,15 @@
             
         </Style>
 
+        <Style TargetType="DataGrid">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontFamily" Value="Franklin Gothic Book"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="CanUserResizeRows" Value="False"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkGrey}"/>
+        </Style>
+
         <Style TargetType="DataGridColumnHeader">
             <Setter Property="BorderBrush" Value="{StaticResource Grey}"/>
             <Setter Property="BorderThickness" Value="1"/>

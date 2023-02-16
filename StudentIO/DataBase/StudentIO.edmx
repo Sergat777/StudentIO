@@ -595,7 +595,6 @@
           <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="SelectionCampaign" Relationship="Self.FK_SelectionCampaign_Employee" FromRole="Employee" ToRole="SelectionCampaign" />
-          <Property Name="MiddleNameEmployee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Enrollee">
           <Key>

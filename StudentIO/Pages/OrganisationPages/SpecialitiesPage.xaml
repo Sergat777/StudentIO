@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:StudentIO.Pages.OrganisationPages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="СПЕЦИАЛЬНОСТИ">
+      Title="СПЕЦИАЛЬНОСТИ" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
 
@@ -22,16 +22,16 @@
                  TextChanged="tbSearch_TextChanged"/>
         </DockPanel>
 
-        <DataGrid Grid.Row="1" AutoGenerateColumns="False" ColumnWidth="*" x:Name="dgSpecialities" IsReadOnly="True" CanUserResizeRows="False">
+        <DataGrid Grid.Row="1" x:Name="dgSpecialities">
             <DataGrid.Columns >
-                <DataGridTextColumn Header="Код" Binding="{Binding CodeSpeciality}"/>
-                <DataGridTextColumn Header="Специальность" Binding="{Binding SpecialityFullName}"/>
-                <DataGridTextColumn Header="Форма обучения" Binding="{Binding FormOfEducation.FormName}"/>
-                <DataGridTextColumn Header="Длительность (курсы)" Binding="{Binding EducationDuration}"/>
+                <DataGridTextColumn Header="Код" Binding="{Binding CodeSpeciality}" Width="0.5*"/>
+                <DataGridTextColumn Header="Специальность" Binding="{Binding SpecialityFullName}" Width="1.5*"/>
+                <DataGridTextColumn Header="Форма обучения" Binding="{Binding FormOfEducation.FormName}" Width="0.5*"/>
+                <DataGridTextColumn Header="Длительность (курсы)" Binding="{Binding EducationDuration}" Width="0.5*"/>
                 <DataGridTemplateColumn Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Image x:Name="imgEditSpeciality" Height="20" Source="/Resources/edit.png" Margin="5"/>
+                            <Image Height="20" Source="/Resources/edit.png" MouseDown="btEditSpeciality_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

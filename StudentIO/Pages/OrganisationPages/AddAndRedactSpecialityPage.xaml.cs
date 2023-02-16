@@ -26,6 +26,7 @@ namespace StudentIO.Pages.OrganisationPages
         public AddAndRedactSpecialityPage(DataBase.Speciality editedSpeciality)
         {
             InitializeComponent();
+            cmbxFormOfEducation.ItemsSource = DataBase.StudentIOEntities1.GetContext().FormOfEducation.ToList();
 
             if (editedSpeciality != null)
             {
@@ -49,9 +50,9 @@ namespace StudentIO.Pages.OrganisationPages
             if (!string.IsNullOrWhiteSpace(tbCodeSpeciality.Text) &&
                 !string.IsNullOrWhiteSpace(tbSpecialityFullName.Text) &&
                 !string.IsNullOrWhiteSpace(tbEducationDuration.Text) &&
-                cmbxFormOfEducation.SelectedIndex < 0)
+                cmbxFormOfEducation.SelectedIndex >= 0)
             {
-                if (!tbEducationDuration.Text.All(Char.IsDigit))
+                if (tbEducationDuration.Text.All(Char.IsDigit))
                 {
                     if (MessageBox.Show("Вы уверены, что хотите сохранить информацию о новой специальности?", "Внимание",
                         MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
@@ -62,12 +63,14 @@ namespace StudentIO.Pages.OrganisationPages
                         AddRedactSpeciality.FormOfEducationId = cmbxFormOfEducation.SelectedIndex + 1;
 
                         if (isNewSpeciality)
-                            DataBase.StudentIOEntities.GetContext().Speciality.Add(AddRedactSpeciality);
+                            DataBase.StudentIOEntities1.GetContext().Speciality.Add(AddRedactSpeciality);
 
-                        DataBase.StudentIOEntities.GetContext().SaveChanges();
+                        DataBase.StudentIOEntities1.GetContext().SaveChanges();
 
                         MessageBox.Show("Информация успешно сохранена!", "Информация",
                             MessageBoxButton.OK, MessageBoxImage.Information);
+
+                        NavigationService.GoBack();
                     }
                 }
                 else

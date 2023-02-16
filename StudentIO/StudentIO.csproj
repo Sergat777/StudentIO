@@ -104,6 +104,7 @@
     <Compile Include="DataBase\OrderOfAdmission.cs">
       <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\PartialSelectionCampaign.cs" />
     <Compile Include="DataBase\PersonalStudentFile.cs">
       <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
@@ -166,6 +167,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\EntranceTestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -206,6 +211,9 @@
   <ItemGroup>
     <Compile Include="Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EntranceTestPage.xaml.cs">
+      <DependentUpon>EntranceTestPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

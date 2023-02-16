@@ -1,7 +1,7 @@
-﻿// Создание кода T4 для модели "C:\Users\Игорь\source\repos\StudentIO\StudentIO\DataBase\StudentIO.edmx" включено. 
-// Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
-// на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
-// открыта в конструкторе.
+﻿// T4 code generation is enabled for model 'C:\Users\Sergat\source\repos\StudentIO\StudentIO\DataBase\StudentIO.edmx'. 
+// To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
+// property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
+// is open in the designer.
 
 // If no context and entity classes have been generated, it may be because you created an empty model but
 // have not yet chosen which version of Entity Framework to use. To generate a context class and entity
