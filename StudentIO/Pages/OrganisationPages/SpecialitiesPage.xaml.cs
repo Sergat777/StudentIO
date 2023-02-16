@@ -26,6 +26,7 @@ namespace StudentIO.Pages.OrganisationPages
         {
             InitializeComponent();
             ParentFrame = parentFrame;
+            dgSpecialities.ItemsSource = DataBase.StudentIOEntities.GetContext().Speciality.ToList();
         }
 
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)

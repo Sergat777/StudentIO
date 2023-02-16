@@ -20,14 +20,14 @@ namespace StudentIO.DataBase
         {
         }
 
-        private static StudentIOEntities _dataContext;
+        public static StudentIOEntities student;
 
         public static StudentIOEntities GetContext()
         {
-            if(_dataContext == null)
-                _dataContext = new StudentIOEntities(); 
-            
-            return (_dataContext);
+            if(student == null)
+            {
+                student = new StudentIOEntities();
+            }return (student);
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

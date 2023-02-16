@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище StudentIOModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище StudentIOModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AdmissionControlNumber">
           <Key>
             <PropertyRef Name="SelectionCampaignId" />
@@ -23,7 +23,7 @@
           <Property Name="IdEmployee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstNameEmployee" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="SecondNameEmployee" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="MiddleNameEmloyee" Type="nvarchar" MaxLength="50" />
+          <Property Name="MiddleNameEmployee" Type="nvarchar" MaxLength="50" />
           <Property Name="Login" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
@@ -566,8 +566,7 @@
             <End Role="SubjectOfEntranceTest" EntitySet="SubjectOfEntranceTest" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="StudentIOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -596,6 +595,7 @@
           <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="SelectionCampaign" Relationship="Self.FK_SelectionCampaign_Employee" FromRole="Employee" ToRole="SelectionCampaign" />
+          <Property Name="MiddleNameEmployee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Enrollee">
           <Key>
@@ -1196,10 +1196,10 @@
           <EntitySetMapping Name="Employee">
             <EntityTypeMapping TypeName="StudentIOModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="MiddleNameEmployee" ColumnName="MiddleNameEmployee" />
                 <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
                 <ScalarProperty Name="FirstNameEmployee" ColumnName="FirstNameEmployee" />
                 <ScalarProperty Name="SecondNameEmployee" ColumnName="SecondNameEmployee" />
-                <ScalarProperty Name="MiddleNameEmloyee" ColumnName="MiddleNameEmloyee" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
