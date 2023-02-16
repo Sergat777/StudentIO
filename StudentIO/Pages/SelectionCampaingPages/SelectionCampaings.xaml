@@ -9,6 +9,38 @@
       Title="SelectionCampaings">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <ListView Grid.Row="1" x:Name="lvCampaings">
+            <WrapPanel>
+                <StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="№"/>
+                        <TextBlock Text="Дата Начала:"/>
+                        <TextBlock Text="Дата Окончания:"/>
+                        <TextBlock Text="Отвественный сотрудник:"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="{Binding IdSelectionCampaign}"/>
+                        <TextBlock Text="{Binding StartDate}"/>
+                        <TextBlock Text="{Binding EndDate}"/>
+                        <TextBlock Text="{Binding}"/>
+                    </StackPanel>
+                </StackPanel>
+
+            </WrapPanel>
+        </ListView>
+
+        <Border Grid.Row="2" BorderBrush="{StaticResource Grey}" BorderThickness="3">
+            <Grid>
+
+                <Button x:Name="btAdd" Content="Добавить" Grid.Column="2" Click="btAdd_Click"/>
+
+            </Grid>
+        </Border>
     </Grid>
 </Page>

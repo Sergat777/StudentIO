@@ -9,6 +9,25 @@
       Title="OrderOfAdmissionPage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" ColumnWidth="*" x:Name="dgCampaings" IsReadOnly="True" CanUserResizeRows="False">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="№" Binding="{Binding NumberOrderOfAdmission}"/>
+                <DataGridTextColumn Header="Дата подписания" Binding="{Binding DateOfSigning}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Border Grid.Row="2" BorderBrush="{StaticResource Grey}" BorderThickness="3">
+            <Grid>
+
+                <Button x:Name="btAdd" Content="Добавить" Grid.Column="2" Click="btAdd_Click"/>
+
+            </Grid>
+        </Border>
     </Grid>
 </Page>

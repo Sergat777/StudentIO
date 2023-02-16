@@ -199,6 +199,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\SelectionCampaingPages\AddNewOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SelectionCampaingPages\AddNewSelectionCampaingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\SelectionCampaingPages\OrderOfAdmissionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -235,6 +243,12 @@
     </Compile>
     <Compile Include="Pages\SelectionCampain.xaml.cs">
       <DependentUpon>SelectionCampain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SelectionCampaingPages\AddNewOrder.xaml.cs">
+      <DependentUpon>AddNewOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SelectionCampaingPages\AddNewSelectionCampaingPage.xaml.cs">
+      <DependentUpon>AddNewSelectionCampaingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SelectionCampaingPages\OrderOfAdmissionPage.xaml.cs">
       <DependentUpon>OrderOfAdmissionPage.xaml</DependentUpon>
