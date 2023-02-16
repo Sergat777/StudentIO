@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentIO.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -29,7 +30,20 @@ namespace StudentIO
 
             //mainFrame.Navigate(new Pages.AuthPage());
 
-            mainFrame.Navigate(new Pages.MainPage());
+
+
+            //private static StudentIOEntities1 _context;
+
+            //public static StudentIOEntities1 GetContext()
+            //{
+            //    if (_context == null)
+            //        _context = new StudentIOEntities1();
+
+            //    return _context;
+            //}
+
+
+        mainFrame.Navigate(new Pages.MainPage());
 
         }
 

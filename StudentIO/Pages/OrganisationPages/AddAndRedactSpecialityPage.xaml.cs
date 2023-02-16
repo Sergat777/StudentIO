@@ -20,9 +20,63 @@ namespace StudentIO.Pages.OrganisationPages
     /// </summary>
     public partial class AddAndRedactSpecialityPage : Page
     {
+        bool isNewSpeciality = false;
+        public DataBase.Speciality AddRedactSpeciality = new DataBase.Speciality();
+
         public AddAndRedactSpecialityPage(DataBase.Speciality editedSpeciality)
         {
             InitializeComponent();
+
+            if (editedSpeciality != null)
+            {
+                AddRedactSpeciality = editedSpeciality;
+                isNewSpeciality = true;
+
+                tbCodeSpeciality.Text = editedSpeciality.CodeSpeciality;
+                tbSpecialityFullName.Text = editedSpeciality.SpecialityFullName;
+                tbEducationDuration.Text = editedSpeciality.EducationDuration.ToString();
+                cmbxFormOfEducation.SelectedIndex = editedSpeciality.FormOfEducationId - 1;
+            }
+        }
+
+        private void btGoBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void btConfirm_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(tbCodeSpeciality.Text) &&
+                !string.IsNullOrWhiteSpace(tbSpecialityFullName.Text) &&
+                !string.IsNullOrWhiteSpace(tbEducationDuration.Text) &&
+                cmbxFormOfEducation.SelectedIndex < 0)
+            {
+                if (!tbEducationDuration.Text.All(Char.IsDigit))
+                {
+                    if (MessageBox.Show("Вы уверены, что хотите сохранить информацию о новой специальности?", "Внимание",
+                        MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                    {
+                        AddRedactSpeciality.CodeSpeciality = tbCodeSpeciality.Text;
+                        AddRedactSpeciality.SpecialityFullName = tbSpecialityFullName.Text;
+                        AddRedactSpeciality.EducationDuration = Convert.ToInt16(tbEducationDuration.Text);
+                        AddRedactSpeciality.FormOfEducationId = cmbxFormOfEducation.SelectedIndex + 1;
+
+                        if (isNewSpeciality)
+                            DataBase.StudentIOEntities.GetContext().Speciality.Add(AddRedactSpeciality);
+
+                        DataBase.StudentIOEntities.GetContext().SaveChanges();
+
+                        MessageBox.Show("Информация успешно сохранена!", "Информация",
+                            MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }
+                else
+                    MessageBox.Show("Количество курсов введено некоректно!", "Внимание",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+                MessageBox.Show("Все поля обязательны для заполнения!", "Внимание",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }
