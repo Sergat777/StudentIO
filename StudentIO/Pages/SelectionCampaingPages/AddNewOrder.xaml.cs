@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace StudentIO.Pages.SelectionCampaingPages
 {
     /// <summary>
-    /// Логика взаимодействия для SelectionCampaings.xaml
+    /// Логика взаимодействия для AddNewOrder.xaml
     /// </summary>
-    public partial class SelectionCampaings : Page
+    public partial class AddNewOrder : Page
     {
-        public SelectionCampaings()
+        public AddNewOrder()
         {
             InitializeComponent();
-            dgCampaings.ItemsSource = DataBase.StudentIOEntities.GetContext().SelectionCampaign.ToList();
-        }
-
-        private void btAdd_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
