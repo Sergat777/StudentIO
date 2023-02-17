@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fd88f3dff6cf4d5b91ff2e2cf86ded46" Name="Diagram1">
+      <Diagram DiagramId="7ce8fd19cffb42d8a3b1c01e6591a8a4" Name="Diagram1">
         <EntityTypeShape EntityType="StudentIOModel.AdmissionControlNumber" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentIOModel.Employee" Width="2" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentIOModel.Employee" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentIOModel.Enrollee" Width="1.5" PointX="10.5" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentIOModel.EnrolleeDocument" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentIOModel.EnrolleeEntranceTest" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />

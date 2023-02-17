@@ -26,12 +26,12 @@ namespace StudentIO.Pages.OrganisationPages
         {
             InitializeComponent();
             ParentFrame = parentFrame;
-            dgSpecialities.ItemsSource = DataBase.StudentIOEntities1.GetContext().Speciality.ToList();
+            dgSpecialities.ItemsSource = DataBase.StudentIOEntities2.GetContext().Speciality.ToList();
         }
 
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            dgSpecialities.ItemsSource = DataBase.StudentIOEntities1.GetContext().Speciality.
+            dgSpecialities.ItemsSource = DataBase.StudentIOEntities2.GetContext().Speciality.
                Where(u => u.CodeSpeciality.Contains(tbSearch.Text) ||
                           u.SpecialityFullName.Contains(tbSearch.Text) ||
                           u.FormOfEducation.FormName.Contains(tbSearch.Text) ||
@@ -51,7 +51,7 @@ namespace StudentIO.Pages.OrganisationPages
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             if (Visibility == Visibility.Visible)
-                dgSpecialities.ItemsSource = DataBase.StudentIOEntities1.GetContext().Speciality.ToList();
+                dgSpecialities.ItemsSource = DataBase.StudentIOEntities2.GetContext().Speciality.ToList();
         }
     }
 }

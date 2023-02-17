@@ -20,13 +20,11 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Button x:Name="btPersonalFiles" Content="Предметы" Grid.Column="0" Click="btPersonalFiles_Click"/>
             <Button x:Name="btGroups" Content="Результаты" Grid.Column="1" Click="btGroups_Click"/>
             <Button x:Name="btSpecialties" Content="Испытания" Grid.Column="2" Click="btSpecialties_Click"/>
-            <Button x:Name="btEmployees" Content="Сотрудники" Grid.Column="3" Click="btEmployees_Click"/>
 
         </Grid>
 

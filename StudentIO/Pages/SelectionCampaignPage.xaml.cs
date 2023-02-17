@@ -23,16 +23,7 @@ namespace StudentIO.Pages
         public SelectionCampain()
         {
             InitializeComponent();
-        }
-
-        private void btCampain_Click(object sender, RoutedEventArgs e)
-        {
-            SelectionCampainFrame.Navigate(new Pages.SelectionCampaingPages.SelectionCampaings());
-        }
-
-        private void btOrders_Click(object sender, RoutedEventArgs e)
-        {
-            SelectionCampainFrame.Navigate(new Pages.SelectionCampaingPages.OrderOfAdmissionPage()); 
+            SelectionCampaignFrame.Navigate(new Pages.SelectionCampaingPages.SelectionCampaings(SelectionCampaignFrame));
         }
     }
 }

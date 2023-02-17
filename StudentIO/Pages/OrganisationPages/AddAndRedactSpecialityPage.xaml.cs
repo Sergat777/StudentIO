@@ -26,7 +26,7 @@ namespace StudentIO.Pages.OrganisationPages
         public AddAndRedactSpecialityPage(DataBase.Speciality editedSpeciality)
         {
             InitializeComponent();
-            cmbxFormOfEducation.ItemsSource = DataBase.StudentIOEntities1.GetContext().FormOfEducation.ToList();
+            cmbxFormOfEducation.ItemsSource = DataBase.StudentIOEntities2.GetContext().FormOfEducation.ToList();
 
             if (editedSpeciality != null)
             {
@@ -63,9 +63,9 @@ namespace StudentIO.Pages.OrganisationPages
                         AddRedactSpeciality.FormOfEducationId = cmbxFormOfEducation.SelectedIndex + 1;
 
                         if (isNewSpeciality)
-                            DataBase.StudentIOEntities1.GetContext().Speciality.Add(AddRedactSpeciality);
+                            DataBase.StudentIOEntities2.GetContext().Speciality.Add(AddRedactSpeciality);
 
-                        DataBase.StudentIOEntities1.GetContext().SaveChanges();
+                        DataBase.StudentIOEntities2.GetContext().SaveChanges();
 
                         MessageBox.Show("Информация успешно сохранена!", "Информация",
                             MessageBoxButton.OK, MessageBoxImage.Information);

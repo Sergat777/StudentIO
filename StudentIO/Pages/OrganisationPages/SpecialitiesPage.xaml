@@ -24,14 +24,14 @@
 
         <DataGrid Grid.Row="1" x:Name="dgSpecialities">
             <DataGrid.Columns >
-                <DataGridTextColumn Header="Код" Binding="{Binding CodeSpeciality}" Width="0.5*"/>
+                <DataGridTextColumn Header="Код" Binding="{Binding CodeSpeciality}" Width="0.3*"/>
                 <DataGridTextColumn Header="Специальность" Binding="{Binding SpecialityFullName}" Width="1.5*"/>
                 <DataGridTextColumn Header="Форма обучения" Binding="{Binding FormOfEducation.FormName}" Width="0.5*"/>
                 <DataGridTextColumn Header="Длительность (курсы)" Binding="{Binding EducationDuration}" Width="0.5*"/>
                 <DataGridTemplateColumn Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Image Height="20" Source="/Resources/edit.png" MouseDown="btEditSpeciality_Click"/>
+                            <Image Height="20" Margin="3" Source="/Resources/edit.png" MouseDown="btEditSpeciality_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

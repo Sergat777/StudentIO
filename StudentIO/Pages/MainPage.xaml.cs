@@ -27,17 +27,17 @@ namespace StudentIO.Pages
 
         private void btEnrollee_Click(object sender, RoutedEventArgs e)
         {
-
+            mainPageFrame.Navigate(new OrganisationPage());
         }
 
         private void btSelectionCampaign_Click(object sender, RoutedEventArgs e)
         {
-
+            mainPageFrame.Navigate(new SelectionCampain());
         }
 
         private void btEntranceTest_Click(object sender, RoutedEventArgs e)
         {
-
+            mainPageFrame.Navigate(new EntranceTestPage());
         }
 
         private void btOrganization_Click(object sender, RoutedEventArgs e)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentIO.DataBase
 {
-    public class PartialSelectionCampaign : SelectionCampaign
+    public partial class SelectionCampaign
     {
         public int CampaignYear
         {
@@ -16,6 +16,13 @@ namespace StudentIO.DataBase
             }
         }
 
-
+        public bool IsOver
+        {
+            get
+            {
+                return StudentIOEntities2.GetContext().OrderOfAdmission.
+                    FirstOrDefault(u => u.SelectionCampaignId == IdSelectionCampaign) != null;
+            }
+        }
     }
 }

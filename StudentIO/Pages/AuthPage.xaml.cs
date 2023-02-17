@@ -37,7 +37,7 @@ namespace StudentIO.Pages
                 MessageBox.Show("Заполните поля логина и пароля!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
-                DataBase.Employee employee = DataBase.StudentIOEntities.GetContext().Employee.FirstOrDefault(u =>
+                DataBase.Employee employee = DataBase.StudentIOEntities2.GetContext().Employee.FirstOrDefault(u =>
                     u.Login == tbLogin.Text && u.Password == pswPassword.Password);
 
                 if (employee == null)

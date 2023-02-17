@@ -24,5 +24,20 @@ namespace StudentIO.Pages
         {
             InitializeComponent();
         }
+
+        private void btPersonalFiles_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btGroups_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btSpecialties_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

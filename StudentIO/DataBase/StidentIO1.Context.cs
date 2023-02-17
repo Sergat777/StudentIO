@@ -13,24 +13,22 @@ namespace StudentIO.DataBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class StudentIOEntities : DbContext
+    public partial class StudentIOEntities2 : DbContext
     {
-        public StudentIOEntities()
-            : base("name=StudentIOEntities")
+        public StudentIOEntities2()
+            : base("name=StudentIOEntities2")
         {
         }
 
-        private static StudentIOEntities _context;
+        private static StudentIOEntities2 _context;
 
-        public static StudentIOEntities GetContext()
+        public static StudentIOEntities2 GetContext()
         {
             if (_context == null)
-                _context = new StudentIOEntities();
+                _context = new StudentIOEntities2();
 
             return _context;
         }
-
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

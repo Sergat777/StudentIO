@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:StudentIO.Pages.SelectionCampaingPages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SelectionCampaings">
+      Title="ПРИЕМНЫЕ КАМПАНИИ">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -15,24 +15,69 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <ListView Grid.Row="1" x:Name="lvCampaings">
-            <WrapPanel>
-                <StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="№"/>
-                        <TextBlock Text="Дата Начала:"/>
-                        <TextBlock Text="Дата Окончания:"/>
-                        <TextBlock Text="Отвественный сотрудник:"/>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="{Binding IdSelectionCampaign}"/>
-                        <TextBlock Text="{Binding StartDate}"/>
-                        <TextBlock Text="{Binding EndDate}"/>
-                        <TextBlock Text="{Binding}"/>
-                    </StackPanel>
-                </StackPanel>
+        <ListView Grid.Row="1" x:Name="lvCampaings" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
 
-            </WrapPanel>
+                    <Border Width="320" Background="{StaticResource PaleWhite}" CornerRadius="25"
+                            BorderBrush="{StaticResource DarkGrey}" BorderThickness="2" Margin="5">
+                        <DockPanel LastChildFill="False">
+                            <TextBlock Margin="10" HorizontalAlignment="Center" FontSize="24" FontWeight="ExtraBold" TextWrapping="Wrap" TextAlignment="Center"
+                                   Text="{Binding CampaignYear, StringFormat=ПРИЕМНАЯ КАМПАНИЯ {0}}" DockPanel.Dock="Top"/>
+
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                                <TextBlock Margin="10" Text="Дата начала:"/>
+                                <TextBlock Margin="10" Text="{Binding StartDate, StringFormat={}{0:dd.MM}}"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                                <TextBlock Margin="10" Text="Дата окончания:"/>
+                                <TextBlock Margin="10" Text="{Binding EndDate, StringFormat={}{0:dd.MM}}"/>
+                            </StackPanel>
+                            
+                            <Button DockPanel.Dock="Top" Margin="10" x:Name="btViewControlNumbers" Click="btViewControlNumbers_Click">
+                                <Button.Content>
+                                    <DockPanel>
+                                        <Image Height="20" Source="/Resources/viewWhite.png" DockPanel.Dock="Left" Margin="5, 0, 5, 0"/>
+                                        <TextBlock Text="Контрольные цифры приема" TextAlignment="Center" Foreground="{StaticResource PaleWhite}" Margin="5, 0, 5, 0"/>
+                                    </DockPanel>
+                                </Button.Content>
+                            </Button>
+
+                            <Button DockPanel.Dock="Top" Margin="10" x:Name="btViewOrder" Click="btViewOrder_Click">
+                                <Button.Content>
+                                    <DockPanel>
+                                        <Image Height="20" Source="/Resources/viewWhite.png" DockPanel.Dock="Left" Margin="5, 0, 5, 0"/>
+                                        <TextBlock Text="Приказ о зачислении" TextAlignment="Center" Foreground="{StaticResource PaleWhite}" Margin="5, 0, 5, 0"/>
+                                    </DockPanel>
+                                </Button.Content>
+                            </Button>
+
+                            <Button DockPanel.Dock="Top" Margin="10" x:Name="btMakeOrder" Click="btMakeOrder_Click" Visibility="Collapsed">
+                                <Button.Content>
+                                    <DockPanel>
+                                        <Image Height="20" Source="/Resources/editWhite.png" DockPanel.Dock="Left" Margin="5, 0, 5, 0"/>
+                                        <TextBlock Text="Оформить приказ" TextAlignment="Center" Foreground="{StaticResource PaleWhite}" Margin="5, 0, 5, 0"/>
+                                    </DockPanel>
+                                </Button.Content>
+                            </Button>
+                        </DockPanel>
+                    </Border>
+
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding IsOver}" Value="False">
+                            <Setter TargetName="btViewOrder" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="btMakeOrder" Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
 
         <Border Grid.Row="2" BorderBrush="{StaticResource Grey}" BorderThickness="3">

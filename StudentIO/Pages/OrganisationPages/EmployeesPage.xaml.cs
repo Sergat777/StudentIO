@@ -26,7 +26,7 @@ namespace StudentIO.Pages.OrganisationPages
         {
             InitializeComponent();
             ParentFrame = parentFrame;
-            dgEmployees.ItemsSource = DataBase.StudentIOEntities1.GetContext().Employee.ToList();
+            dgEmployees.ItemsSource = DataBase.StudentIOEntities2.GetContext().Employee.ToList();
         }
 
         private void btRedact_Click(object sender, RoutedEventArgs e)
@@ -60,17 +60,17 @@ namespace StudentIO.Pages.OrganisationPages
                 MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 DataBase.Employee deletedEmployee = dgEmployees.SelectedItem as DataBase.Employee;
-                DataBase.StudentIOEntities1.GetContext().Employee.Remove(deletedEmployee);
-                DataBase.StudentIOEntities1.GetContext().SaveChanges();
+                DataBase.StudentIOEntities2.GetContext().Employee.Remove(deletedEmployee);
+                DataBase.StudentIOEntities2.GetContext().SaveChanges();
 
                 MessageBox.Show("Удаление учетной записи сотрудника прошло успешно!", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-                dgEmployees.ItemsSource = DataBase.StudentIOEntities1.GetContext().Employee.ToList();
+                dgEmployees.ItemsSource = DataBase.StudentIOEntities2.GetContext().Employee.ToList();
             }
         }
 
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            dgEmployees.ItemsSource = DataBase.StudentIOEntities1.GetContext().Employee.
+            dgEmployees.ItemsSource = DataBase.StudentIOEntities2.GetContext().Employee.
                 Where(u => u.SecondNameEmployee.Contains(tbSearch.Text) ||
                            u.FirstNameEmployee.Contains(tbSearch.Text) ||
                            u.MiddleNameEmployee.Contains(tbSearch.Text) ||
@@ -81,7 +81,7 @@ namespace StudentIO.Pages.OrganisationPages
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             if (Visibility == Visibility.Visible)
-                dgEmployees.ItemsSource = DataBase.StudentIOEntities1.GetContext().Employee.ToList();
+                dgEmployees.ItemsSource = DataBase.StudentIOEntities2.GetContext().Employee.ToList();
         }
     }
 }

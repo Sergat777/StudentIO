@@ -66,9 +66,9 @@ namespace StudentIO.Pages.OrganisationPages
                         AddRedactEmployee.Password = tbPasswordEmployee.Text;
 
                         if (AddRedactEmployee.IdEmployee == 0)
-                            DataBase.StudentIOEntities1.GetContext().Employee.Add(AddRedactEmployee);
+                            DataBase.StudentIOEntities2.GetContext().Employee.Add(AddRedactEmployee);
 
-                        DataBase.StudentIOEntities1.GetContext().SaveChanges();
+                        DataBase.StudentIOEntities2.GetContext().SaveChanges();
 
                         MessageBox.Show("Информация успешно сохранена!", "Информация",
                             MessageBoxButton.OK, MessageBoxImage.Information);

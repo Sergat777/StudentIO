@@ -20,13 +20,30 @@ namespace StudentIO.Pages.SelectionCampaingPages
     /// </summary>
     public partial class SelectionCampaings : Page
     {
-        public SelectionCampaings()
+        public Frame ParentFrame;
+
+        public SelectionCampaings(Frame parentFrame)
         {
             InitializeComponent();
-            dgCampaings.ItemsSource = DataBase.StudentIOEntities.GetContext().SelectionCampaign.ToList();
+            ParentFrame = parentFrame;
+            lvCampaings.ItemsSource = DataBase.StudentIOEntities2.GetContext().SelectionCampaign.ToList();
         }
 
         private void btAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btViewOrder_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btViewControlNumbers_Click(object sender, RoutedEventArgs e)
+        {
+            ParentFrame.Navigate(new ControlNumbers((sender as Button).DataContext as DataBase.SelectionCampaign));
+        }
+
+        private void btMakeOrder_Click(object sender, RoutedEventArgs e)
         {
 
         }
