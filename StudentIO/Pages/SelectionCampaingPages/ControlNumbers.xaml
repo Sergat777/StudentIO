@@ -17,7 +17,20 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-
+            
+<DockPanel Grid.Row="0">
+                <Image Height="20" DockPanel.Dock="Left" Source="/Resources/search.png" Margin="5"/>
+                <TextBox x:Name="tbSearch" ToolTip="Введите для поиска" Margin="5" VerticalAlignment="Center" TextChanged="tbSearch_TextChanged"/>
+            </DockPanel>
+            
+<DockPanel>
+                <Button x:Name="btGoBack" DockPanel.Dock="Left" Click="btGoBack_Click" VerticalAlignment="Center">
+                    <Button.Content>
+                        <Image Height="20" Source="/Resources/arrow.png"/>
+                    </Button.Content>
+                </Button>
+                <TextBlock x:Name="txtDescription" Margin="10" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center"/>
+            </DockPanel>
             <DockPanel>
                 <Button x:Name="btGoBack" DockPanel.Dock="Left" Click="btGoBack_Click" VerticalAlignment="Center">
                     <Button.Content>
@@ -26,6 +39,12 @@
                 </Button>
                 <TextBlock x:Name="txtDescription" Margin="10" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center"/>
             </DockPanel>
+            <DockPanel Grid.Row="0">
+                <Image Height="20" DockPanel.Dock="Left" Source="/Resources/search.png" Margin="5"/>
+                <TextBox x:Name="tbSearch" ToolTip="Введите для поиска" Margin="5" VerticalAlignment="Center" TextChanged="tbSearch_TextChanged"/>
+            </DockPanel>
+
+            <TextBlock x:Name="txtDescription" Margin="10" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center"/>
 
             <DataGrid x:Name="dgControlNumbers" Margin="5" Grid.Row="1">
                 <DataGrid.Columns>

@@ -75,51 +75,51 @@
     </Compile>
     <Compile Include="Classes\Navigation.cs" />
     <Compile Include="DataBase\AdmissionControlNumber.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Employee.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Enrollee.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\EnrolleeDocument.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\EnrolleeEntranceTest.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\EntranceTest.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\FormOfEducation.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Group.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Nationality.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\OrderOfAdmission.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\PartialEnrollee.cs" />
     <Compile Include="DataBase\PartialSelectionCampaign.cs" />
     <Compile Include="DataBase\PersonalStudentFile.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\SelectionCampaign.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Speciality.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\StartEducation.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Statement.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\StidentIO1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -136,14 +136,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StidentIO1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\StudentIO.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentIO.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\StudentIO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentIO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\StudentIO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentIO.edmx</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\Subject.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\SubjectOfEntranceTest.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\sysdiagrams.cs">
-      <DependentUpon>StidentIO1.tt</DependentUpon>
+      <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -280,6 +295,13 @@
     <None Include="DataBase\StidentIO1.edmx.diagram">
       <DependentUpon>StidentIO1.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="DataBase\StudentIO.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StudentIO.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataBase\StudentIO.edmx.diagram">
+      <DependentUpon>StudentIO.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -315,6 +337,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>StidentIO1.edmx</DependentUpon>
       <LastGenOutput>StidentIO1.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataBase\StudentIO.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudentIO.edmx</DependentUpon>
+      <LastGenOutput>StudentIO.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataBase\StudentIO.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudentIO.edmx</DependentUpon>
+      <LastGenOutput>StudentIO.cs</LastGenOutput>
     </Content>
     <Resource Include="Resources\editWhite.png" />
     <Resource Include="Resources\checkBlue.png" />
