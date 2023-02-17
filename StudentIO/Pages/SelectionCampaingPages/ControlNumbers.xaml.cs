@@ -36,5 +36,14 @@ namespace StudentIO.Pages.SelectionCampaingPages
                 dgAdmissionStudents.Visibility = Visibility.Visible;
             }
         }
+
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dgControlNumbers.ItemsSource = DataBase.StudentIOEntities2.GetContext().AdmissionControlNumber.
+                Where(u => u.SpecialityCode.Contains(tbSearch.Text) ||
+                           u.Speciality.SpecialityFullName.Contains(tbSearch.Text) ||
+                           u.NumberOfStudent.ToString().Contains(tbSearch.Text) ||
+                           u.FormOfEducation.FormName.Contains(tbSearch.Text)).ToList();
+        }
     }
 }
