@@ -49,6 +49,15 @@
                                 </Button.Content>
                             </Button>
 
+                            <Button DockPanel.Dock="Top" Margin="10" x:Name="btMakeControlNumbers" Click="btMakeControlNumbers_Click" Visibility="Collapsed">
+                                <Button.Content>
+                                    <DockPanel>
+                                        <Image Height="20" Source="/Resources/editWhite.png" DockPanel.Dock="Left" Margin="5, 0, 5, 0"/>
+                                        <TextBlock Text="Указать цифры приема" TextAlignment="Center" Foreground="{StaticResource PaleWhite}" Margin="5, 0, 5, 0"/>
+                                    </DockPanel>
+                                </Button.Content>
+                            </Button>
+
                             <Button DockPanel.Dock="Top" Margin="10" x:Name="btViewOrder" Click="btViewOrder_Click">
                                 <Button.Content>
                                     <DockPanel>
@@ -70,10 +79,17 @@
                     </Border>
 
                     <DataTemplate.Triggers>
+                        
                         <DataTrigger Binding="{Binding IsOver}" Value="False">
                             <Setter TargetName="btViewOrder" Property="Visibility" Value="Collapsed"/>
                             <Setter TargetName="btMakeOrder" Property="Visibility" Value="Visible"/>
                         </DataTrigger>
+
+                        <DataTrigger Binding="{Binding IsStart}" Value="False">
+                            <Setter TargetName="btViewControlNumbers" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="btMakeControlNumbers" Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        
                     </DataTemplate.Triggers>
 
                 </DataTemplate>

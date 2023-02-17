@@ -27,7 +27,7 @@ namespace StudentIO.Pages
 
         private void btEnrollee_Click(object sender, RoutedEventArgs e)
         {
-            mainPageFrame.Navigate(new OrganisationPage());
+            mainPageFrame.Navigate(new EnrolleePage());
         }
 
         private void btSelectionCampaign_Click(object sender, RoutedEventArgs e)

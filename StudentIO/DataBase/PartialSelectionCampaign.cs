@@ -16,6 +16,15 @@ namespace StudentIO.DataBase
             }
         }
 
+        public bool IsStart
+        {
+            get
+            {
+                return StudentIOEntities2.GetContext().AdmissionControlNumber.
+                    FirstOrDefault(u => u.SelectionCampaignId == IdSelectionCampaign) != null;
+            }
+        }
+
         public bool IsOver
         {
             get

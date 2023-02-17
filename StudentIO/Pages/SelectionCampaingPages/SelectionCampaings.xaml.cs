@@ -31,7 +31,7 @@ namespace StudentIO.Pages.SelectionCampaingPages
 
         private void btAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            ParentFrame.Navigate(new AddNewSelectionCampaingPage());
         }
 
         private void btViewOrder_Click(object sender, RoutedEventArgs e)
@@ -44,6 +44,11 @@ namespace StudentIO.Pages.SelectionCampaingPages
         }
 
         private void btMakeOrder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btMakeControlNumbers_Click(object sender, RoutedEventArgs e)
         {
 
         }

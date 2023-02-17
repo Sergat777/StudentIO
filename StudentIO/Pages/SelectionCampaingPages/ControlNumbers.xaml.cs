@@ -36,5 +36,10 @@ namespace StudentIO.Pages.SelectionCampaingPages
                 dgAdmissionStudents.Visibility = Visibility.Visible;
             }
         }
+
+        private void btGoBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

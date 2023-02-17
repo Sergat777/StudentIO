@@ -97,5 +97,19 @@
             </Style.Triggers>
         </Style>
         
+        <Style TargetType="DataGridCell">
+
+            <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self},Path=Content.Text}"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="{StaticResource DarkBlue}"/>
+                    <Setter Property="Foreground" Value="{StaticResource PaleWhite}"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource PaleWhite}"/>
+                </Trigger>
+            </Style.Triggers>
+            
+        </Style>
+        
     </Application.Resources>
 </Application>

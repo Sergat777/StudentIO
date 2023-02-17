@@ -18,7 +18,14 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock x:Name="txtDescription" Margin="10" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center"/>
+            <DockPanel>
+                <Button x:Name="btGoBack" DockPanel.Dock="Left" Click="btGoBack_Click" VerticalAlignment="Center">
+                    <Button.Content>
+                        <Image Height="20" Source="/Resources/arrow.png"/>
+                    </Button.Content>
+                </Button>
+                <TextBlock x:Name="txtDescription" Margin="10" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center"/>
+            </DockPanel>
 
             <DataGrid x:Name="dgControlNumbers" Margin="5" Grid.Row="1">
                 <DataGrid.Columns>
@@ -26,12 +33,13 @@
                     <DataGridTextColumn Header="Специальность" Binding="{Binding Speciality.SpecialityFullName}" Width="1.5*"/>
                     <DataGridTextColumn Header="Количество мест" Binding="{Binding NumberOfStudent}" Width="0.5*"/>
                     <DataGridTextColumn Header="Форма обучения" Binding="{Binding FormOfEducation.FormName}" Width="0.5*"/>
-                    <DataGridTemplateColumn Header="Платная основа" Width="0.5*">
+                    <DataGridTemplateColumn Header="Платная основа" Width="0.5*" SortMemberPath="{Binding IsPaidBasis}" CanUserSort="True">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Image x:Name="imgCheck" Height="20" Source="/Resources/checkBlue.png"/>
 
                                 <DataTemplate.Triggers>
+
                                     <DataTrigger Binding="{Binding IsPaidBasis}" Value="False">
                                         <Setter TargetName="imgCheck" Property="Visibility" Value="Hidden"/>
                                     </DataTrigger>

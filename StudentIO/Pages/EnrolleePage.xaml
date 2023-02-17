@@ -1,0 +1,72 @@
+﻿<Page x:Class="StudentIO.Pages.EnrolleePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:StudentIO.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="{Binding Content.Title, ElementName=SelectionCampaignFrame, FallbackValue='АБИТУРИЕНТЫ'}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0">
+            <Image Height="20" DockPanel.Dock="Left" Source="/Resources/search.png" Margin="5"/>
+            <TextBox x:Name="tbSearch" ToolTip="Введите для поиска" Margin="5" VerticalAlignment="Center" TextChanged="tbSearch_TextChanged"/>
+        </DockPanel>
+
+        <DataGrid Grid.Row="1" ColumnWidth="*" x:Name="dgEmployees" FontSize="18">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Код" Binding="{Binding Statement.SpecialityCode}" Width="0.4*"/>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding FIO}" Width="0.7*"/>
+                <DataGridTextColumn Header="Дата подачи заявления" Binding="{Binding Statement.DateOfFilling, StringFormat={}{0:dd.MM.yy}}" Width="0.7*"/>
+                <DataGridTemplateColumn Header="Средний балл" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock x:Name="Certificate" Text="{Binding EnrolleeDocument.CertificateScore}"/>
+                                <TextBlock x:Name="Diplom" Text="{Binding EnrolleeDocument.DiplomScore}" Visibility="Collapsed"/>
+                            </StackPanel>
+
+                            <DataTemplate.Triggers>
+                                <DataTrigger Binding="{Binding EnrolleeDocument.CertificateScore}" Value="{x:Null}">
+                                    <Setter TargetName="Certificate" Property="Visibility" Value="Collapsed"/>
+                                    <Setter TargetName="Diplom" Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Номер для связи" Binding="{Binding MobilePhone}" Width="0.7*"/>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btViewEnrollee" Click="btViewEnrollee_Click">
+                                <Button.Content>
+                                    <Image Height="20" Source="/Resources/viewWhite.png"/>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btEditEnrollee" Click="btEditEnrollee_Click">
+                                <Button.Content>
+                                    <Image Height="20" Source="/Resources/editWhite.png"/>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Grid>
+</Page>
