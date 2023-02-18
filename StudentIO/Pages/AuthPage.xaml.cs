@@ -23,6 +23,8 @@ namespace StudentIO.Pages
         public AuthPage()
         {
             InitializeComponent();
+            Classes.Navigation.InfoPanel.Visibility = Visibility.Hidden;
+            Classes.Navigation.UserFIO.Visibility = Visibility.Collapsed;
         }
 
         private void btClear_Click(object sender, RoutedEventArgs e)
@@ -46,8 +48,12 @@ namespace StudentIO.Pages
                 {
                     MessageBox.Show($"Добро пожаловать, {employee.SecondNameEmployee} {employee.FirstNameEmployee} {employee.MiddleNameEmployee}!",
                         "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+
+
                     Classes.Navigation.CurrentEmployee = employee;
                     Classes.Navigation.FrameNavigation.Navigate(new Pages.MainPage());
+                    Classes.Navigation.UserFIO.Visibility = Visibility.Visible;
+                    Classes.Navigation.InfoPanel.Visibility = Visibility.Visible;
                     Classes.Navigation.TxtSecondName.Text = employee.SecondNameEmployee;
                     Classes.Navigation.TxtFirstName.Text = employee.FirstNameEmployee;
                     Classes.Navigation.TxtMiddleName.Text = employee.MiddleNameEmployee;

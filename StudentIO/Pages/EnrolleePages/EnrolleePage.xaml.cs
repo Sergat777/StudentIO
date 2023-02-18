@@ -23,12 +23,15 @@ namespace StudentIO.Pages
         public EnrolleePage()
         {
             InitializeComponent();
-            dgEmployees.ItemsSource = DataBase.StudentIOEntities2.GetContext().Enrollee.ToList();
+            dgEnrollees.ItemsSource = DataBase.StudentIOEntities2.GetContext().Enrollee.ToList();
         }
 
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            dgEnrollees.ItemsSource = DataBase.StudentIOEntities2.GetContext().Enrollee.
+                Where(u => u.SecondNameEnrollee.Contains(tbSearch.Text) ||
+                           u.FirstNameEnrollee.Contains(tbSearch.Text) ||
+                           u.MiddleNameEnrollee.Contains(tbSearch.Text)).ToList();
         }
 
         private void btEditEnrollee_Click(object sender, RoutedEventArgs e)
@@ -37,6 +40,11 @@ namespace StudentIO.Pages
         }
 
         private void btViewEnrollee_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btAddEnrollee_Click(object sender, RoutedEventArgs e)
         {
 
         }

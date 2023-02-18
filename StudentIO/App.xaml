@@ -110,6 +110,21 @@
             </Style.Triggers>
             
         </Style>
+
+        <Style TargetType="DatePicker">
+
+            <Setter Property="Background" Value="{StaticResource DarkBlue}"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkGrey}"/>
+
+        </Style>
+
+        <Style TargetType="ComboBox">
+
+            <Setter Property="BorderBrush" Value="{StaticResource DarkBlue}"/>
+            <Setter Property="Background" Value="{StaticResource PaleWhite}"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkGrey}"/>
+
+        </Style>
         
     </Application.Resources>
 </Application>

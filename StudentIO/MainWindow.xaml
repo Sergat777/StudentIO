@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentIO"
         mc:Ignorable="d"
-        Title="Студент ИО" Height="650" Width="1500" MinHeight="650" MinWidth="1300"
+        Title="Студент ИО" Height="700" Width="1380" MinHeight="700" MinWidth="1350"
         Icon="/Resources/AdmissionIcon.ico" Background="{StaticResource PaleWhite}"
         WindowStartupLocation="CenterScreen">
     <DockPanel>
@@ -13,11 +13,16 @@
         <Border BorderBrush="{StaticResource Grey}" BorderThickness="5" Height="120" DockPanel.Dock="Top">
             <DockPanel>
                 <Image Source="/Resources/AdmissionIcon.png" Margin="10" DockPanel.Dock="Left"/>
-                <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="10">
-                    <TextBlock x:Name="txtEmployeeSecondName" TextAlignment="Right"/>
-                    <TextBlock x:Name="txtEmployeeFirstName" TextAlignment="Right"/>
-                    <TextBlock x:Name="txtEmployeeMiddleName" TextAlignment="Right"/>
-                </StackPanel>
+
+                <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="10" x:Name="UserFIO">
+                    <TextBlock Text="Выполнен вход в учетную запись:" DockPanel.Dock="Top" Margin="5"/>
+                    <StackPanel DockPanel.Dock="Top" Margin="5" Orientation="Horizontal" >
+                        <TextBlock x:Name="txtEmployeeSecondName" TextAlignment="Right" Margin="2"/>
+                        <TextBlock x:Name="txtEmployeeFirstName" TextAlignment="Right" Margin="2"/>
+                        <TextBlock x:Name="txtEmployeeMiddleName" TextAlignment="Right" Margin="2"/>
+                    </StackPanel>
+                </DockPanel>
+                
                 <TextBlock Text="{Binding Content.Title, ElementName=mainFrame}" TextAlignment="Center"
                            VerticalAlignment="Center" FontSize="62" FontWeight="Heavy" Foreground="{StaticResource DarkGrey}"/>
             </DockPanel>

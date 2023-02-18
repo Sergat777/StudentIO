@@ -50,7 +50,13 @@ namespace StudentIO.Pages.SelectionCampaingPages
 
         private void btMakeControlNumbers_Click(object sender, RoutedEventArgs e)
         {
+            ParentFrame.Navigate(new AddControlNumbers((sender as Button).DataContext as DataBase.SelectionCampaign));
+        }
 
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+                lvCampaings.ItemsSource = DataBase.StudentIOEntities2.GetContext().SelectionCampaign.ToList();
         }
     }
 }

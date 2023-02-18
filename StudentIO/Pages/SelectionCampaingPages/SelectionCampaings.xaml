@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:StudentIO.Pages.SelectionCampaingPages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ПРИЕМНЫЕ КАМПАНИИ">
+      Title="ПРИЕМНЫЕ КАМПАНИИ" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -30,16 +30,14 @@
                             <TextBlock Margin="10" HorizontalAlignment="Center" FontSize="24" FontWeight="ExtraBold" TextWrapping="Wrap" TextAlignment="Center"
                                    Text="{Binding CampaignYear, StringFormat=ПРИЕМНАЯ КАМПАНИЯ {0}}" DockPanel.Dock="Top"/>
 
-                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                                <TextBlock Margin="10" Text="Дата начала:"/>
-                                <TextBlock Margin="10" Text="{Binding StartDate, StringFormat={}{0:dd.MM}}"/>
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center">
+                                <TextBlock Margin="5" Text="{Binding StartDate, StringFormat={}{0:dd.MM}}"/>
+                                <TextBlock Margin="5" Text="-"/>
+                                <TextBlock Margin="5" Text="{Binding EndDate, StringFormat={}{0:dd.MM}}"/>
                             </StackPanel>
 
-                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                                <TextBlock Margin="10" Text="Дата окончания:"/>
-                                <TextBlock Margin="10" Text="{Binding EndDate, StringFormat={}{0:dd.MM}}"/>
-                            </StackPanel>
-                            
+                            <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="5" Text="{Binding Employee.FIO, StringFormat=Ответственный: {0}}"/>
+
                             <Button DockPanel.Dock="Top" Margin="10" x:Name="btViewControlNumbers" Click="btViewControlNumbers_Click">
                                 <Button.Content>
                                     <DockPanel>

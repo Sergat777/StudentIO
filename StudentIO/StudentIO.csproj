@@ -104,6 +104,7 @@
     <Compile Include="DataBase\OrderOfAdmission.cs">
       <DependentUpon>StudentIO.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\PartialEmployee.cs" />
     <Compile Include="DataBase\PartialEnrollee.cs" />
     <Compile Include="DataBase\PartialSelectionCampaign.cs" />
     <Compile Include="DataBase\PersonalStudentFile.cs">
@@ -168,7 +169,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\EnrolleePage.xaml">
+    <Page Include="Pages\EnrolleePages\EnrolleePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -204,6 +205,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\SelectionCampaingPages\AddControlNumbers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\SelectionCampaingPages\AddOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -229,7 +234,7 @@
     <Compile Include="Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\EnrolleePage.xaml.cs">
+    <Compile Include="Pages\EnrolleePages\EnrolleePage.xaml.cs">
       <DependentUpon>EnrolleePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\EntranceTestPage.xaml.cs">
@@ -255,6 +260,9 @@
     </Compile>
     <Compile Include="Pages\SelectionCampaignPage.xaml.cs">
       <DependentUpon>SelectionCampaignPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SelectionCampaingPages\AddControlNumbers.xaml.cs">
+      <DependentUpon>AddControlNumbers.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SelectionCampaingPages\AddOrder.xaml.cs">
       <DependentUpon>AddOrder.xaml</DependentUpon>
@@ -348,6 +356,7 @@
       <DependentUpon>StudentIO.edmx</DependentUpon>
       <LastGenOutput>StudentIO.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\delete.png" />
     <Resource Include="Resources\editWhite.png" />
     <Resource Include="Resources\checkBlue.png" />
   </ItemGroup>

@@ -20,28 +20,13 @@
             <TextBox x:Name="tbSearch" ToolTip="Введите для поиска" Margin="5" VerticalAlignment="Center" TextChanged="tbSearch_TextChanged"/>
         </DockPanel>
 
-        <DataGrid Grid.Row="1" ColumnWidth="*" x:Name="dgEmployees" FontSize="18">
+        <DataGrid Grid.Row="1" ColumnWidth="*" x:Name="dgEnrollees" FontSize="18">
             <DataGrid.Columns >
-                <DataGridTextColumn Header="Код" Binding="{Binding Statement.SpecialityCode}" Width="0.4*"/>
                 <DataGridTextColumn Header="ФИО" Binding="{Binding FIO}" Width="0.7*"/>
-                <DataGridTextColumn Header="Дата подачи заявления" Binding="{Binding Statement.DateOfFilling, StringFormat={}{0:dd.MM.yy}}" Width="0.7*"/>
-                <DataGridTemplateColumn Header="Средний балл" Width="*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <TextBlock x:Name="Certificate" Text="{Binding EnrolleeDocument.CertificateScore}"/>
-                                <TextBlock x:Name="Diplom" Text="{Binding EnrolleeDocument.DiplomScore}" Visibility="Collapsed"/>
-                            </StackPanel>
-
-                            <DataTemplate.Triggers>
-                                <DataTrigger Binding="{Binding EnrolleeDocument.CertificateScore}" Value="{x:Null}">
-                                    <Setter TargetName="Certificate" Property="Visibility" Value="Collapsed"/>
-                                    <Setter TargetName="Diplom" Property="Visibility" Value="Visible"/>
-                                </DataTrigger>
-                            </DataTemplate.Triggers>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Код специальности" Binding="{Binding Statement.SpecialityCode}" Width="0.4*"/>
+                <DataGridTextColumn Header="Дата подачи заявления" Width="0.7*"
+                                     Binding="{Binding Statement.DateOfFilling, StringFormat={}{0:dd.MM.yy}}"/>
+                <DataGridTextColumn Header="Средний балл" Binding="{Binding AverageScore}" Width="0.7*"/>
                 <DataGridTextColumn Header="Номер для связи" Binding="{Binding MobilePhone}" Width="0.7*"/>
                 <DataGridTemplateColumn Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
@@ -68,5 +53,9 @@
             </DataGrid.Columns>
 
         </DataGrid>
+
+        <Button x:Name="btAddEnrollee" Content="Принять новое заявление" Grid.Row="2" Margin="10"
+                Click="btAddEnrollee_Click"/>
+
     </Grid>
 </Page>

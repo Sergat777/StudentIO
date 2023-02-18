@@ -20,5 +20,15 @@ namespace StudentIO.DataBase
                 return result;
             }
         }
+        public double AverageScore
+        {
+            get
+            {
+                if (EnrolleeDocument.CertificateScore == null)
+                    return (double)EnrolleeDocument.DiplomScore;
+                else
+                    return (double)EnrolleeDocument.CertificateScore;
+            }
+        }
     }
 }

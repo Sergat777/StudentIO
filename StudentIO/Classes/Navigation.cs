@@ -11,6 +11,8 @@ namespace StudentIO.Classes
     {
         public static Frame FrameNavigation { get; set; }
 
+        public static DockPanel InfoPanel { get; set; }
+        public static DockPanel UserFIO { get; set; }
         public static TextBlock TxtSecondName { get; set; }
         public static TextBlock TxtFirstName { get; set; }
         public static TextBlock TxtMiddleName { get; set; }

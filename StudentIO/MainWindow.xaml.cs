@@ -27,6 +27,12 @@ namespace StudentIO
             InitializeComponent();
 
             Classes.Navigation.FrameNavigation = mainFrame;
+            Classes.Navigation.InfoPanel = navigationPanel;
+            Classes.Navigation.UserFIO = UserFIO;
+
+            Classes.Navigation.TxtSecondName = txtEmployeeSecondName;
+            Classes.Navigation.TxtFirstName = txtEmployeeFirstName;
+            Classes.Navigation.TxtMiddleName = txtEmployeeMiddleName;
 
             //mainFrame.Navigate(new Pages.AuthPage());
 
@@ -43,7 +49,7 @@ namespace StudentIO
             //}
 
 
-        mainFrame.Navigate(new Pages.MainPage());
+            mainFrame.Navigate(new Pages.MainPage());
 
         }
 
@@ -53,9 +59,6 @@ namespace StudentIO
                 MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 mainFrame.Navigate(new Pages.AuthPage());
-                txtEmployeeSecondName.Text = "";
-                txtEmployeeFirstName.Text = "";
-                txtEmployeeMiddleName.Text = "";
             }
         }
 

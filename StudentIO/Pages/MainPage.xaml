@@ -11,8 +11,8 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
 
         <Border BorderBrush="{StaticResource Grey}" BorderThickness="3">
@@ -20,7 +20,6 @@
 
                 <Button x:Name="btEnrollee" Content="Абитуриенты" Click="btEnrollee_Click"/>
                 <Button x:Name="btSelectionCampaign" Content="Приемные кампании" Click="btSelectionCampaign_Click"/>
-                <Button x:Name="btEntranceTest" Content="Вступительные испытания" Click="btEntranceTest_Click"/>
                 <Button x:Name="btOrganization" Content="Организация" Click="btOrganization_Click"/>
 
             </StackPanel>
