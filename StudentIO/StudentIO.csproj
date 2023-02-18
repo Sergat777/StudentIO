@@ -169,6 +169,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\EnrolleePages\EnrolleeAllInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\EnrolleePages\EnrolleePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -233,6 +237,9 @@
   <ItemGroup>
     <Compile Include="Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EnrolleePages\EnrolleeAllInfoPage.xaml.cs">
+      <DependentUpon>EnrolleeAllInfoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\EnrolleePages\EnrolleePage.xaml.cs">
       <DependentUpon>EnrolleePage.xaml</DependentUpon>
